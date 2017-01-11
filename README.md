@@ -1,4 +1,13 @@
-# SkillCloud
+# `skill-cloud`
+
+[Work in progress]
+
+This project aims to bring an alternative visualization for the skills you have on your resume.
+Input each skill, how important it is to you, and a little about your experience with that skill
+and skill-cloud will generate an interactive word cloud that can be used on your personal GitHub
+Pages landing page (username.github.io).
+
+This project uses Angular, Angular Material 2, and WordCloud.
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
 

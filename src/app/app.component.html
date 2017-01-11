@@ -1,3 +1,39 @@
-<h1>
-  {{title}}
-</h1>
+<md-sidenav-layout>
+  <md-sidenav #sidenav style="width: 400px;">
+    <button class="new-button" md-fab (click)="newSkill()"><md-icon>add</md-icon></button>
+
+    <div *ngIf="selectedSkill">
+      <md-input-container>
+        <input md-input placeholder="Skill name" value="" [(ngModel)]="selectedSkill.name" />
+      </md-input-container>
+      <br />
+      <md-input-container>
+        <input md-input placeholder="Skill weight" type="number" value="" [(ngModel)]="selectedSkill.weight" (ngModelChange)="reorder()"/>
+      </md-input-container>
+      <br />
+      <md-input-container>
+        <input md-input placeholder="Skill description" value="" [(ngModel)]="selectedSkill.detail" />
+
+      </md-input-container>
+    </div>
+
+    <hr />
+    <div [dragula]='"skill-bag"' [dragulaModel]="skills">
+      <md-card *ngFor="let skill of skills" (click)="selectedSkill = skill">
+        <md-card-title>{{skill.name}}</md-card-title>
+        ({{skill.weight}})
+        <p><i>{{(skill.detail || '').substring(0, 25)}}</i></p>
+      </md-card>
+    </div>
+  </md-sidenav>
+
+  <md-toolbar>
+    <button class="app-icon-button" (click)="sidenav.toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button>
+    <div class="spacer"></div>
+    <span>{{name}}</span>
+    <div class="flex"></div>
+    asdf
+  </md-toolbar>
+</md-sidenav-layout>
